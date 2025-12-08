@@ -1,27 +1,19 @@
-import { Text, View, StyleSheet, Image } from "react-native";
+import { ScrollView, View, StyleSheet } from "react-native";
+import HeaderImage from "../components/HeaderImage";
 
-export default function Index() {
+
+
+export default function DestinationScreen() {
   return (
- <View style={styles.container}>
-      <Image
-        source={require("../assets/images/Golden Light on Majestic Peaks.png")}
-        style={{ width: 500, height: 300 }}
-      />
+    <ScrollView style={styles.container}>
+      <HeaderImage />
 
 
-    
-   </View>
- 
-
+      <View style={{ height: 40 }} />
+    </ScrollView>
   );
 }
 
-
 const styles = StyleSheet.create({
-  container: {
-  backgroundColor: "../assets/images/Golden Light on Majestic Peaks.png",
-   height: 200,
-   width: 400,
-
-  },
+  container: { flex: 1, backgroundColor: "#fff" },
 });
