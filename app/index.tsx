@@ -1,15 +1,27 @@
-import { Text, View } from "react-native";
+import { Text, View, StyleSheet, Image } from "react-native";
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
+ <View style={styles.container}>
+      <Image
+        source={require("../assets/images/Golden Light on Majestic Peaks.png")}
+        style={{ width: 500, height: 300 }}
+      />
+
+
+    
+   </View>
+ 
+
   );
 }
+
+
+const styles = StyleSheet.create({
+  container: {
+  backgroundColor: "../assets/images/Golden Light on Majestic Peaks.png",
+   height: 200,
+   width: 400,
+
+  },
+});
