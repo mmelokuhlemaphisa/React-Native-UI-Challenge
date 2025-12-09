@@ -1,50 +1,128 @@
-# Welcome to your Expo app 👋
+<img src="https://socialify.git.ci/mmelokuhlemaphisa/React-Native-UI-Challenge/image?language=1&owner=1&name=1&stargazers=1&theme=Light" alt="React-Native-UI-Challenge" width="640" height="320" />
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+---
 
-## Get started
+# Destination Infomation & Tours App
 
-1. Install dependencies
+A **React Native** mobile application showcasing destinations and tours with interactive UI components such as ratings, reviews, country flags, and upcoming tours. The app demonstrates modern React Native UI practices using components, hooks, and styling.
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## Table of Contents
 
-   ```bash
-   npx expo start
-   ```
+* [Features](#features)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Components](#components)
+* [Technologies](#technologies)
+* [Structure](#project-structure)
+* [License](#license)
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Features
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+* Display destination details including name, country, flag, rating, and reviews.
+* Interactive **Read More / Read Less** toggle for long descriptions.
+* Upcoming tours list with **image cards**, ratings, and review counts.
+* Heart icon toggle for marking favorite tours.
+* Arrow button for navigating to tour details.
+* Round country flag display using `react-native-country-flag`.
+* Responsive layout for mobile screens.
 
-## Get a fresh project
+---
 
-When you're ready, run:
+## Installation
+
+1. **Clone the repository**
 
 ```bash
-npm run reset-project
+git clone https://github.com/mmelokuhlemaphisa/React-Native-UI-Challenge.git
+cd React-Native-UI-Challenge
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. **Install dependencies**
 
-## Learn more
+```bash
+npm install
 
-To learn more about developing your project with Expo, look at the following resources:
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+3. **Install Expo CLI (if not installed)**
 
-## Join the community
+```bash
+npm install -g expo-cli
+```
 
-Join our community of developers creating universal apps.
+4. **Start the app**
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+npm start
+```
+
+* Open the app in **Expo Go** on your mobile device or in an emulator.
+
+---
+
+## Usage
+
+1. Launch the app to see the **destination card** for Rio de Janeiro.
+2. Scroll through the **Upcoming Tours** list.
+3. Tap the **heart icon** to mark a tour as favorite.
+4. Tap the **arrow icon** to navigate to tour details (can be extended to a detail screen).
+5. Tap **Read More** to expand the description text.
+
+---
+
+## Components
+
+### Information
+
+* Displays destination name, country flag, rating, and description.
+* Features **read more toggle** for expanding text.
+* Contains `ToursList` component for showing upcoming tours.
+
+### TourCard
+
+* Displays **tour image, title, duration, price, rating, and reviews**.
+* Heart icon toggle for favorites.
+* Arrow button for navigation to tour details.
+
+### ToursList
+
+* Renders a **horizontal scrollable list** of `TourCard` components.
+* Example tour data with image URLs, ratings, and review counts.
+
+---
+
+## Technologies
+
+* **React Native** – Mobile application framework
+* **Expo** – Toolchain for running React Native apps
+* **React Hooks** – `useState` for UI interactivity
+* **React Native Country Flag** – Display round country flags
+* **Ionicons** – Icons for star, heart, and arrow
+
+---
+
+## Project Structure
+
+```
+/components
+  ├─ HeaderImage.tsx
+  ├─ TopButton.tsx
+  ├─ Infomation.tsx
+  ├─ TourCard.tsx
+  └─ ToursList.tsx
+/index.tsx
+```
+
+---
+
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
