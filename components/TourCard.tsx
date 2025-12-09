@@ -51,8 +51,9 @@ export default function TourCard({ tour }: { tour: Tour }) {
 const styles = StyleSheet.create({
   card: {
     width: 280,
-    padding: 10,
-    backgroundColor: "#fff",
+    height: 290,
+    padding: 8,
+    backgroundColor: "white",
     borderRadius: 15,
     marginRight: 18,
     marginTop: 12,

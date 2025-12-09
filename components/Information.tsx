@@ -56,8 +56,10 @@ export default function DestinationInfo() {
 const styles = StyleSheet.create({
   card: {
     marginTop: -40,
-    backgroundColor: "#fff",
-    borderRadius: 30,
+    backgroundColor: "white",
+    borderRadius: 50,
+    borderBottomEndRadius: 0,
+    borderBottomStartRadius: 0,
     padding: 20,
   },
   title: {
