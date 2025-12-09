@@ -1,5 +1,5 @@
 import { View, Image, StyleSheet } from "react-native";
-import TopButtons from "../components/TopButton";
+import TopButtons from "./TopButton";
 
 export default function HeaderImage() {
   return (
@@ -22,6 +22,5 @@ const styles = StyleSheet.create({
   headerImage: {
     width: "100%",
     height: "100%",
-  
   },
 });

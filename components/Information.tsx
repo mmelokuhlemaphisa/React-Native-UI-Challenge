@@ -1,30 +1,54 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { useState } from "react";
+import ToursList from "./ToursList";
+import CountryFlag from "react-native-country-flag";
 
 export default function DestinationInfo() {
+  const [expanded, setExpanded] = useState(false);
+
+  const paragraph =
+    "Rio de Janeiro is a vibrant coastal city known for its beaches, culture, and iconic landmarks. From the Christ the Redeemer statue to the famous Copacabana shoreline, the city offers breathtaking views and unforgettable adventures.";
+
   return (
     <View style={styles.card}>
       <Text style={styles.title}>Rio de Janeiro</Text>
 
       <View style={styles.rowBetween}>
         <View style={styles.row}>
-          <Ionicons name="location" size={16} color="green" />
+          {/* Round Flag */}
+          <View style={styles.flagContainer}>
+            <CountryFlag
+              isoCode="BR"
+              size={25}
+              style={{ width: 25, height: 25 }}
+            />
+          </View>
           <Text style={styles.country}>Brazil</Text>
         </View>
 
-        <View style={styles.row}>
-          <Ionicons name="star" size={16} color="#f2c200" />
-          <Text style={styles.rating}>5.0</Text>
+        {/* Rating */}
+        <View style={styles.ratingWrapper}>
+          <View style={styles.row}>
+            <Ionicons name="star-outline" size={16} color="black" />
+            <Text style={styles.rating}>5.0</Text>
+          </View>
           <Text style={styles.reviewCount}>143 reviews</Text>
         </View>
       </View>
 
-      <Text style={styles.description}>
-        Rio de Janeiro, often simply called Rio, is one of Brazil's most iconic
-        cities, renowned for its landscapes, beaches, and culture.
+      {/* Description */}
+      <Text style={styles.description} numberOfLines={expanded ? 5 : 2}>
+        {paragraph}
       </Text>
 
-      <Text style={styles.readMore}>Read more</Text>
+      <TouchableOpacity onPress={() => setExpanded(!expanded)}>
+        <Text style={styles.readMore}>
+          {expanded ? "Read less" : "Read more"}
+        </Text>
+      </TouchableOpacity>
+
+      <ToursList />
     </View>
   );
 }
@@ -35,19 +59,57 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 30,
     padding: 20,
-    marginHorizontal: 10,
-    elevation: 4,
   },
-  title: { fontSize: 28, fontWeight: "bold" },
-  row: { flexDirection: "row", alignItems: "center" },
+  title: {
+    fontSize: 28,
+    fontWeight: "bold",
+  },
+  row: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
   rowBetween: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: 8,
+    marginTop: 10,
   },
-  country: { marginLeft: 4, fontSize: 14 },
-  rating: { marginLeft: 4, fontWeight: "bold" },
-  reviewCount: { marginLeft: 6, color: "grey" },
-  description: { marginTop: 12, color: "#555", lineHeight: 20 },
-  readMore: { marginTop: 8, color: "#007bff", fontWeight: "bold" },
+  country: {
+    marginLeft: 8,
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  ratingWrapper: {
+    alignItems: "center",
+  },
+  rating: {
+    marginLeft: 4,
+    fontWeight: "bold",
+    fontSize: 18,
+  },
+  reviewCount: {
+    marginTop: 2,
+    color: "grey",
+    textDecorationLine: "underline",
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  description: {
+    marginTop: 14,
+    color: "#444",
+    fontSize: 15,
+    lineHeight: 22,
+  },
+  readMore: {
+    marginTop: 6,
+    color: "#007bff",
+    fontWeight: "bold",
+    fontSize: 16,
+  },
+  flagContainer: {
+   borderRadius: 20, // ⭐ makes it round
+    overflow: "hidden",
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });
